@@ -11,10 +11,10 @@
         <br>
     <form method="post" action="/produto">
     {{ csrf_field() }}
-        <input type="text" placeholder= "Nome "name="txNome" />
-        <input type="text" placeholder= "Email"name="txDesc" />
-        <input type="text" placeholder= "Assunto" name="txValor" />
-        <input type="text" placeholder= "Mensagem" name="txData" />
+        <input type="text" placeholder= "Nome"name="txProduto" />
+        <input type="text" placeholder= "Descrição"name="txDesc" />
+        <input type="text" placeholder= "Valor" name="txValor" />
+        <input type="text" placeholder= "Data de Validade" name="txData" />
 
         <input type="submit" value="Salvar" />
     </form>
@@ -31,7 +31,7 @@
             @foreach($produto as $p)
 
             <tr>
-                <td>{{$p->nome}}</td>
+                <td>{{$p->produto}}</td>
                 <td>{{$p->descricao}}</td>
                 <td>{{$p->valor}}</td>
                 <td>{{$p->data}}</td>

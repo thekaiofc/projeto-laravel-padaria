@@ -41,12 +41,12 @@ class ProdutoController extends Controller
     {
         $produtos = new Produto();
 
-        $produtos->nome = $request->txNome;
+        $produtos->produto = $request->txProduto;
         $produtos->descricao = $request->txDesc;
         $produtos->valor = $request->txValor;
         $produtos->data = $request->txData;
 
-        $contato->save();
+        $produtos->save();
 
         return redirect('/produto');
     }
