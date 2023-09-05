@@ -19,3 +19,4 @@ Route::get('index', function () {
 });
 Route::get('/produto-pag','ProdutoController@index');
 Route::post('/produto-pag','ProdutoController@store');
+

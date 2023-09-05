@@ -9,12 +9,13 @@
     <body>
     <h1><b>Cadastro<b></h1>
         <br>
-    <form method="post" action="/produto">
+    <form method="post" action="/produto-pag">
     {{ csrf_field() }}
         <input type="text" placeholder= "Nome"name="txProduto" />
         <input type="text" placeholder= "Descrição"name="txDesc" />
-        <input type="text" placeholder= "Valor" name="txValor" />
-        <input type="text" placeholder= "Data de Validade" name="txData" />
+        <input type="number" placeholder= "Valor" name="txValor" step="0.01" inputmode="decimal" />
+        <input type="date" name="txData" />
+        
 
         <input type="submit" value="Salvar" />
     </form>
@@ -28,17 +29,15 @@
                 <th scope="col">Valor:</th>
                 <th scope="col">Data de Validade:</th>
             </tr>
-            @foreach($produto as $p)
+            @foreach($produtos as $p)
 
             <tr>
                 <td>{{$p->produto}}</td>
-                <td>{{$p->descricao}}</td>
-                <td>{{$p->valor}}</td>
-                <td>{{$p->data}}</td>
+                <td>{{$p->descProduto}}</td>
+                <td>{{$p->valorProduto}}</td>
+                <td>{{$p->dataValidade}}</td>
             </tr>
-
-            <!-- <tr> <th>Nome</th> <th>Email</th> <td>{{$c->nome}}</td>
-            <td>{{$c->email}}</td> <td>{{$c->assunto}}</td> </tr> -->
+            
             @endforeach
 
         </table>

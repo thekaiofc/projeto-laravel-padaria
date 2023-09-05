@@ -17,7 +17,7 @@ class ProdutoController extends Controller
     {
         $produtos = Produto::all();
 
-        return view('produto', compact('produtos'));
+        return view('produto-pag', compact('produtos'));
 
     }
 
@@ -42,13 +42,13 @@ class ProdutoController extends Controller
         $produtos = new Produto();
 
         $produtos->produto = $request->txProduto;
-        $produtos->descricao = $request->txDesc;
-        $produtos->valor = $request->txValor;
-        $produtos->data = $request->txData;
+        $produtos->descProduto = $request->txDesc;
+        $produtos->valorProduto = $request->txValor ;
+        $produtos->dataValidade = $request->txData;
 
         $produtos->save();
 
-        return redirect('/produto');
+        return redirect('/produto-pag');
     }
 
     /**
